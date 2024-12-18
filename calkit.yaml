@@ -1,10 +1,8 @@
-owner: calkit
-name: example-basic
-title: Basic Calkit example
-description: A basic Calkit exmple project.
-git_repo_url: https://github.com/calkit/example-basic
-questions:
-  - Can we make reproducibility simple?
+owner: petebachant
+name: calkit-project-1
+title: My first Calkit project
+description:
+git_repo_url: https://github.com/petebachant/calkit-project-1
 datasets:
   - path: data/raw/data.csv
     title: Raw data
@@ -30,3 +28,7 @@ environments:
     image: texlive/texlive:latest-full
     wdir: /work
     description: TeX Live via Docker.
+derived_from:
+  project: calkit/example-basic
+  git_repo_url: https://github.com/calkit/example-basic
+  git_rev: e28aea580724deb20719f24d1ff401840bd416aa
