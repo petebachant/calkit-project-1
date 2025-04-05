@@ -17,7 +17,7 @@ stages:
   build-paper:
     cmd: >
       calkit runenv -n tex --
-      "cd paper && latexmk -interaction=nonstopmode -pdf paper.tex"
+      latexmk -interaction=nonstopmode -cd -pdf paper/paper.tex"
     deps:
       - figures
       - paper/paper.tex
