@@ -18,6 +18,11 @@ publications:
     title: The paper
     description: This is the paper.
     stage: build-paper
+  - path: paper-2/main.pdf
+    title: Paper 2
+    description:
+    kind:
+    stage: build-paper-2
 environments:
   py:
     path: environment.yml
@@ -32,3 +37,23 @@ derived_from:
   project: calkit/example-basic
   git_repo_url: https://github.com/calkit/example-basic
   git_rev: e28aea580724deb20719f24d1ff401840bd416aa
+pipeline:
+  stages:
+    build-paper-2:
+      name:
+      kind: latex
+      environment: tex
+      wdir:
+      inputs: []
+      outputs: []
+      always_run: false
+      iterate_over:
+      description:
+      target_path: paper-2/main.tex
+      latexmkrc_path:
+      verbose: false
+      force: false
+      synctex: true
+overleaf_sync:
+  paper-2:
+    url: https://www.overleaf.com/project/54b68eff0ee71ad2767b704a
