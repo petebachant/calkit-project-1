@@ -1,50 +1,8 @@
 stages:
   make-thing:
-    cmd: ' bash --noprofile --norc -c "echo \"Making a thing\" > paper-2/thing.txt"'
+    cmd: ' bash --noprofile --norc -c "echo \"Making a thing more\" > paper-2/thing.txt"'
     deps: []
     outs:
       - paper-2/thing.txt
     desc: Automatically generated from the 'make-thing' stage in 
       calkit.yaml. Changes made here will be overwritten.
-  build-paper-2:
-    cmd: calkit latex build -e tex --no-check paper-2/main.tex
-    deps:
-      - paper-2/main.tex
-      - .calkit/env-locks/tex
-    outs:
-      - paper-2/main.pdf
-    desc: Automatically generated from the 'build-paper-2' stage in 
-      calkit.yaml. Changes made here will be overwritten.
-  build-pubs-paper-2:
-    cmd: calkit latex build -e tex --no-check pubs/paper-2/main.tex
-    deps:
-      - pubs/paper-2/main.tex
-      - .calkit/env-locks/tex
-    outs:
-      - pubs/paper-2/main.pdf
-    desc: Automatically generated from the 'build-pubs-paper-2' stage 
-      in calkit.yaml. Changes made here will be overwritten.
-  collect-data:
-    cmd: calkit runenv -n py -- python scripts/collect-data.py
-    deps:
-      - scripts/collect-data.py
-      - environment.yml
-    outs:
-      - data/raw/data.csv
-  plot-voltage:
-    cmd: calkit runenv -n py -- python scripts/plot-voltage.py
-    deps:
-      - scripts/plot-voltage.py
-      - data/raw/data.csv
-      - environment.yml
-    outs:
-      - figures/voltage-time-series.png
-  build-paper:
-    cmd: >
-      calkit runenv -n tex --
-      latexmk -interaction=nonstopmode -cd -pdf paper/paper.tex"
-    deps:
-      - figures
-      - paper/paper.tex
-    outs:
-      - paper/paper.pdf

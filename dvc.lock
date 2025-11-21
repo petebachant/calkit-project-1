@@ -69,9 +69,9 @@ stages:
       md5: 638c28579f02cef74795631a05c573a4
       size: 93237
   make-thing:
-    cmd: ' bash --noprofile --norc -c "echo \"Making a thing\" > paper-2/thing.txt"'
+    cmd: ' bash --noprofile --norc -c "echo \"Making a thing more\" > paper-2/thing.txt"'
     outs:
     - path: paper-2/thing.txt
       hash: md5
-      md5: 6019470c266af2fd33250b7ea38a78ec
-      size: 15
+      md5: b130eeb413db6d877a36b1804252ff59
+      size: 20
