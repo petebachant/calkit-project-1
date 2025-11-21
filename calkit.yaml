@@ -44,6 +44,12 @@ derived_from:
   git_rev: e28aea580724deb20719f24d1ff401840bd416aa
 pipeline:
   stages:
+    make-thing:
+      kind: shell-command
+      environment: _system
+      command: echo "Making a thing" > paper-2/thing.txt
+      outputs:
+        - paper-2/thing.txt
     build-paper-2:
       name:
       kind: latex
@@ -74,6 +80,7 @@ pipeline:
       verbose: false
       force: false
       synctex: true
+
 overleaf_sync:
   paper-2:
     url: https://www.overleaf.com/project/54b68eff0ee71ad2767b704a
