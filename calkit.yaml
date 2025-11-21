@@ -50,36 +50,6 @@ pipeline:
       command: echo "Making a thing more" > paper-2/thing.txt
       outputs:
         - paper-2/thing.txt
-    build-paper-2:
-      name:
-      kind: latex
-      environment: tex
-      wdir:
-      inputs: []
-      outputs: []
-      always_run: false
-      iterate_over:
-      description:
-      target_path: paper-2/main.tex
-      latexmkrc_path:
-      verbose: false
-      force: false
-      synctex: true
-    build-pubs-paper-2:
-      name:
-      kind: latex
-      environment: tex
-      wdir:
-      inputs: []
-      outputs: []
-      always_run: false
-      iterate_over:
-      description:
-      target_path: pubs/paper-2/main.tex
-      latexmkrc_path:
-      verbose: false
-      force: false
-      synctex: true
 
 overleaf_sync:
   paper-2:
