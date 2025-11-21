@@ -47,7 +47,7 @@ pipeline:
     make-thing:
       kind: shell-command
       environment: _system
-      command: echo "Making a thing" > paper-2/thing.txt
+      command: echo "Making a thing more" > paper-2/thing.txt
       outputs:
         - paper-2/thing.txt
     build-paper-2:
